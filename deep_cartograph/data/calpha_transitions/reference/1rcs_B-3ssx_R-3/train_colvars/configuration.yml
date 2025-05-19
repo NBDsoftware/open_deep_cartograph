@@ -1,0 +1,75 @@
+ae:
+  architecture:
+    hidden_layers:
+    - 15
+    - 15
+  training:
+    optimizer:
+      kwargs:
+        lr: 0.01
+clustering:
+  algorithm: hdbscan
+  cluster_selection_epsilon: 0.0
+  linkage: complete
+  min_cluster_size: 50
+  min_samples: 5
+  n_init: 20
+  num_clusters: 3
+  opt_num_clusters: true
+  run: true
+  search_interval:
+  - 3
+  - 8
+common:
+  architecture:
+    hidden_layers:
+    - 10
+    - 10
+    lag_time: 30
+  dimension: 2
+  training:
+    early_stopping:
+      min_delta: 1.0e-05
+      patience: 20
+    general:
+      batch_size: 256
+      check_val_every_n_epoch: 1
+      dropout: 0.1
+      lengths:
+      - 0.8
+      - 0.2
+      max_epochs: 1000
+      max_tries: 10
+      random_split: false
+      save_check_every_n_epoch: 1
+      seed: 42
+      shuffle: false
+    optimizer:
+      kwargs:
+        lr: 0.001
+        weight_decay: 0.0
+      name: Adam
+    plot_loss: true
+    save_loss: true
+cvs:
+- pca
+- ae
+- tica
+- deep_tica
+figures:
+  fes:
+    bandwidth: 0.025
+    compute: true
+    max_fes: 18.0
+    num_bins: 200
+    num_blocks: 1
+    save: true
+    temperature: 300
+    traj_projection:
+      plot: True
+      num_bins: 100
+      bandwidth: 0.25
+      alpha: 0.6
+      cmap: turbo
+      use_legend: True
+      marker_size: 12

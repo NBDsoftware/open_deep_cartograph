@@ -1,0 +1,10 @@
+venv/
+build/
+venvps/
+_pycache_/
+*.pyc
+.vscode/
+*.egg-info/
+output*/
+debug/
+lightning_logs/
